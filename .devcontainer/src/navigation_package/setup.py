@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'robot_package'
+package_name = 'navigation_package'
 
 setup(
     name=package_name,
@@ -14,7 +14,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='beukjacob',
-    maintainer_email='102491750+Siniehh@users.noreply.github.com',
+    maintainer_email='siniehh@gmail.com',
     description='TODO: Package description',
     license='TODO: License declaration',
     extras_require={
@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'test = robot_package.test:main'
+            'navigation = navigation_package.navigation:main'
         ],
     },
 )

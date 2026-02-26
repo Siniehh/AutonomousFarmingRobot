@@ -23,7 +23,8 @@ ENV SHELL /bin/bash
 WORKDIR /ros2_ws
 COPY ./src ./src
 # Build your code
-RUN . /opt/ros/kilted/setup.sh && \
+RUN . /opt/ros/kilted/setup.sh && \ 
+    export PIP_BREAK_SYSTEM_PACKAGES=1 \
     rosdep update && rosdep install --from-paths src --ignore-src -r -y && \
     colcon build
 
