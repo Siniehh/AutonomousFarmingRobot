@@ -16,7 +16,7 @@ THROTTLE = {
 ## index 1 = clockwise pin; index 2 = counter-clockwise pin
 WHEEL_PINS = {
   "L": {
-      "F": [13, 15],
+      "F": [15, 13],
       "B": [33, 31],
   },
   "R": {
@@ -43,7 +43,6 @@ def _initGPIO():
         for pinInputs in depths.values():
             for pin in pinInputs:
                 GPIO.setup(pin, GPIO.OUT)
-                print(pin)
 
     for side in ["L", "R"]:
         GPIO.setup(POWER_PINS[side], GPIO.OUT)
@@ -104,7 +103,7 @@ def Straight(dir, t):
 ## PACKAGE
 
 def main():
-    print('Hi from navigation_package.')
+    print('START RUNNING')
     Straight(1, 3)
 
     MoveWheel('R', 'F', 1, 1)
@@ -120,11 +119,11 @@ def main():
     Turn('L', 1, 3)
 
     Straight(1, 10)
-    print("ended")
 
     # in Python, before shutdown
 
     Cleanup()
+    print("CLEANED UP")
 
 
 if __name__ == '__main__':
